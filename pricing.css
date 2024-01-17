@@ -1,4 +1,6 @@
-#pricing slider {
+<!-- RANGESLIDER SCRIPT-->
+
+<script>
 /*! rangeslider.js - v0.3.7 | (c) 2014 @andreruffert | MIT license | https://github.com/andreruffert/rangeslider.js */ ! function(a) {
     "use strict";
     "function" == typeof define && define.amd ? define(["jquery"], a) : a("object" == typeof exports ? require("jquery") : jQuery)
@@ -188,13 +190,25 @@
 
       },
       onSlide: function(position, value) {
-          $('.rangeslider__handle').attr('data-content', value);
+            // Format the value with commas
+            var formattedValue = value.toLocaleString();
+
+            // Update the handle's data-content attribute with the formatted value
+            $('.rangeslider__handle').attr('data-content', formattedValue);
+
           $('.done').removeClass('active');
           $('.slide').addClass('active');
       },
       onSlideEnd: function(position, value) {
+// Format the value with commas
+            var formattedValue = value.toLocaleString();
+
+            // Update the handle's data-content attribute with the formatted value
+            $('.rangeslider__handle').attr('data-content', formattedValue);
+
         $('.done').addClass('active');
         $('.slide').removeClass('active');
       }
   });
-  }
+  
+  </script>
